@@ -50,3 +50,13 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'azmd-server'
     publishLocation: 'Container'
+- task: GitHubRelease@1
+  inputs:
+    gitHubConnection: 'github.com_henokv'
+    repositoryName: 'henokv/azmd-server'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'gitTag'
+    tagPattern: '$(GitVersion.SemVer)'
+    changeLogCompareToRelease: 'lastFullRelease'
+    changeLogType: 'commitBased'
