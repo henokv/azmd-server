@@ -1,3 +1,4 @@
+![Go](https://github.com/henokv/azmd-server/workflows/Go/badge.svg?branch=master)
 # Install
 
 ```
