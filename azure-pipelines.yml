@@ -44,7 +44,7 @@ stages:
       workingDirectory: '$(modulePath)'
       displayName: 'Get dependencies, then build'
 - stage: build
-  condition: and(succeeded(), or(startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/tags/')))
+  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')
   jobs:
   - job: validate
     steps:
