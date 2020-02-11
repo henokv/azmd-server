@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'go:1.8'
+      image 'golang:1.8'
     }
 
   }
@@ -14,4 +14,4 @@ go install -v ./...'''
     }
 
   }
-} 
+}
